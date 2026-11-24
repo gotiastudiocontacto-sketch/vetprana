@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Prana Vet · Centro veterinario en Bogotá, Calle 72</title>
+<meta name="description" content="Centro veterinario en Bogotá: consulta, grooming y bienestar para perros y gatos. Agenda por WhatsApp. Calle 72 # 28A-18.">
+<meta name="theme-color" content="#f1f1f6">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Prana Vet · Centro veterinario en Bogotá">
+<meta property="og:description" content="Salud y bienestar para tu peludo. Agenda la cita de tu perro o gato por WhatsApp.">
+<meta property="og:locale" content="es_CO">
+<meta property="og:site_name" content="Prana Vet">
+<!-- Vista previa al compartir por WhatsApp: sube og-image.jpg junto a este archivo
+     y cambia el dominio por el real cuando publiques (WhatsApp exige URL completa con https). -->
+<meta property="og:url" content="https://prana-vet.vercel.app/">
+<meta property="og:image" content="https://prana-vet.vercel.app/og-image.jpg">
+<meta property="og:image:secure_url" content="https://prana-vet.vercel.app/og-image.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Página de Prana Vet, centro veterinario en Bogotá, con citas por WhatsApp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://prana-vet.vercel.app/og-image.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<script>
+/* =====================================================================
+   NEGOCIO — Edita SOLO este bloque para cambiar de negocio.
+   Si un campo queda vacío ("" o []), esa parte de la página se oculta.
+   ===================================================================== */
+const NEGOCIO = {
+  tipo: "veterinaria",
+  schemaTipo: "VeterinaryCare",           // Tipo para Google
+  nombre: "Prana Vet",
+  ciudad: "Bogotá",
+  clienteIdeal: "Familias con perros y gatos cerca de la Calle 72 en Bogotá", // EJEMPLO
+  idioma: "es",
+  tono: "cercano",
+
+  // ---- ESTILO (colores de su logo) ----
+  estilo: {
+    modo: "claro",
+    fondo: "#f1f1f6",                     // Gris lavanda claro, plano
+    principal: "#232a5e",                 // Azul profundo del logo: botón principal y foco
+    acento: "#f39200",                    // Naranja del logo: solo el icono de la oferta
+    fuente: '-apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", Inter, sans-serif',
+    fuenteMarca: "",
+    fuenteTitular: "",                    // Vacío = fuente del sistema
+    marcaColores: []
+  },
+
+  // ---- CONTACTO ----
+  contacto: {
+    whatsapp: "573137624136",
+    whatsappEnlace: "",
+    telefono: "313 762 4136",
+    mensaje: "Hola, vi su página y quiero agendar una cita para mi mascota en Prana Vet.",
+    direccion: "Calle 72 # 28A-18, Bogotá",
+    localidad: "Bogotá",
+    region: "Bogotá D.C.",
+    referencia: "",                       // Ej. "Frente al parque..." (vacío = se oculta)
+    mapaEmbed: "",                        // Pega aquí el código de "Insertar un mapa" de Google Maps
+    zonaHoraria: "America/Bogota",
+    etiquetaHorario: "",
+    estadoAbierto: "",
+    estadoCerrado: "",
+    horario: {                            // De su Instagram: lunes a sábado 8:30 a. m. a 6:00 p. m.
+      lunes: "08:30-18:00", martes: "08:30-18:00", miercoles: "08:30-18:00", jueves: "08:30-18:00",
+      viernes: "08:30-18:00", sabado: "08:30-18:00", domingo: ""
+    },
+    notasHorario: [],
+    redes: [
+      { nombre: "Instagram", url: "https://www.instagram.com/vetprana/" }
+    ]
+  },
+
+  // ---- CONTENIDO ----
+  contenido: {
+    lema: "",
+    titular: "Atención veterinaria para tu peludo en Bogotá.",
+    subtitulo: "Cuidamos la salud y el bienestar de perros y gatos en nuestra sede de la Calle 72. Agenda la cita por WhatsApp y te respondemos de una.",
+    oferta: {                             // EJEMPLO
+      titulo: "Baño y peluquería para perros y gatos",
+      detalle: "Agenda el grooming de tu mascota y pregúntanos por los planes.",
+      boton: "Agendar grooming"
+    },
+    servicios: [                          // Consulta y grooming salen de su Instagram; el resto es EJEMPLO
+      { nombre: "Consulta veterinaria" },
+      { nombre: "Grooming: baño y peluquería" },
+      { nombre: "Vacunación" },
+      { nombre: "Desparasitación" },
+      { nombre: "Control y revisión general" }
+    ],
+    logo: "logo.jpg",                     // Logo horizontal (va en una píldora azul)
+    logoAncho: true,                      // true = logo horizontal; false = logo cuadrado con el nombre al lado
+    foto: "consulta.jpg",
+    fotos: ["grooming.jpg"]
+  }
+};
+</script>
+
+<style>
+:root{
+  --bg:#eff0f3; --primary:#2e6b3f; --on-primary:#fff; --accent:#e0a526;
+  --text:#1d1d1f; --text2:#6e6e73; --text2-bg:#5c5852;
+  --surf:linear-gradient(180deg,rgba(255,255,255,.92),rgba(255,255,255,.68));
+  --rim:linear-gradient(165deg,rgba(255,255,255,1) 0%,rgba(255,255,255,.18) 50%,rgba(255,255,255,.5) 100%);
+  --hair:0 0 0 1px rgba(0,0,0,.07);
+  --inner:inset 0 1px 0 #fff;
+  --drop:0 1px 1px rgba(0,0,0,.03),0 4px 12px -4px rgba(0,0,0,.06),0 26px 52px -22px rgba(0,0,0,.16);
+  --fill:rgba(118,118,128,.10); --sep:rgba(60,60,67,.12); --hover:rgba(118,118,128,.08);
+  --font:-apple-system,BlinkMacSystemFont,"SF Pro Display",Inter,sans-serif;
+  --font-marca:"DM Serif Display",Georgia,serif;
+  --font-titular:var(--font);
+}
+html[data-modo="oscuro"]{
+  --text:#f5f5f7; --text2:#a1a1a6; --text2-bg:#a1a1a6;
+  --surf:linear-gradient(180deg,rgba(255,255,255,.085),rgba(255,255,255,.035));
+  --rim:linear-gradient(165deg,rgba(255,255,255,.24) 0%,rgba(255,255,255,.06) 50%,rgba(255,255,255,.03) 100%);
+  --hair:0 0 0 1px rgba(0,0,0,.4);
+  --inner:inset 0 1px 0 rgba(255,255,255,.06);
+  --drop:0 1px 1px rgba(0,0,0,.2),0 4px 12px -4px rgba(0,0,0,.3),0 26px 52px -22px rgba(0,0,0,.6);
+  --fill:rgba(118,118,128,.24); --sep:rgba(84,84,88,.45); --hover:rgba(255,255,255,.05);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--bg);-webkit-text-size-adjust:100%}
+body{font-family:var(--font);color:var(--text);background:var(--bg);font-size:16px;line-height:1.45;-webkit-font-smoothing:antialiased;overflow-x:hidden;min-height:100vh;display:flex;flex-direction:column}
+a{color:inherit;text-decoration:none}
+button,input,select{font:inherit;color:inherit}
+svg{flex:none}
+.tab{font-variant-numeric:tabular-nums}
+[hidden]{display:none!important}
+
+/* ---------- Vidrio ---------- */
+.glass{position:relative;background:var(--surf);border-radius:24px;box-shadow:var(--hair),var(--inner),var(--drop)}
+.glass::before{content:"";position:absolute;inset:0;border-radius:inherit;padding:1px;background:var(--rim);
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;
+  mask:linear-gradient(#000 0 0) content-box exclude,linear-gradient(#000 0 0);pointer-events:none}
+.pill{border-radius:999px}
+
+/* ---------- Layout ---------- */
+.wrap{width:100%;max-width:1320px;margin:0 auto;padding:0 32px}
+.topbar{position:sticky;top:14px;z-index:20;margin-top:14px;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 8px 8px 10px;
+  -webkit-backdrop-filter:blur(24px) saturate(170%);backdrop-filter:blur(24px) saturate(170%)}
+.brand{display:flex;align-items:center;gap:10px;font-weight:600;font-size:16px;letter-spacing:-.01em;min-width:0}
+.brand-name{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-family:var(--font-marca);font-weight:400;font-size:22px;letter-spacing:-.01em;line-height:1}
+.brand-name .rest{color:var(--text2);margin-left:6px;font-size:18px}
+.logo{font-family:var(--font-marca);font-weight:400!important;font-size:20px!important}
+.logo{width:34px;height:34px;border-radius:10px;background:var(--primary);color:var(--on-primary);display:grid;place-items:center;font-weight:600;font-size:16px;overflow:hidden;flex:none}
+.logo.wide{width:auto;height:44px;padding:0 14px;background:var(--primary);border-radius:12px}
+.logo.wide img{height:36px;width:auto;object-fit:contain}
+.logo img{width:100%;height:100%;object-fit:cover}
+.bar-r{display:flex;align-items:center;gap:6px}
+.tel{display:flex;align-items:center;gap:7px;font-size:14px;color:var(--text2);padding:0 12px;min-height:44px;border-radius:12px;transition:color .2s}
+.tel:hover{color:var(--text)}
+
+main.wrap{flex:1;display:grid;grid-template-columns:55fr 45fr;gap:28px;padding-top:26px;padding-bottom:22px;align-items:start}
+.col{display:flex;flex-direction:column;gap:16px;min-width:0}
+.left{padding-top:8px}
+
+.status{align-self:flex-start;display:inline-flex;align-items:center;gap:8px;padding:8px 14px;font-size:14px;color:var(--text2);min-height:36px}
+.dot{width:8px;height:8px;border-radius:50%;background:#8e8e93}
+.dot.on{background:#30b158;box-shadow:0 0 0 3px rgba(48,177,88,.18)}
+h1{font-family:var(--font-titular);font-size:clamp(38px,4.2vw,58px);font-weight:600;letter-spacing:-.03em;line-height:1.04;margin-top:6px;text-wrap:balance}
+h1.serif{letter-spacing:-.015em;font-weight:600;line-height:1.06}
+.lema{font-family:var(--font-marca);font-style:italic;font-size:22px;color:var(--text2-bg);margin-top:2px;line-height:1.2}
+.sub{font-size:19px;color:var(--text2-bg);max-width:560px;line-height:1.45;text-wrap:pretty}
+.ctas{display:flex;gap:10px;flex-wrap:wrap;margin-top:4px}
+
+/* ---------- Botones ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:48px;padding:0 20px;border-radius:12px;font-weight:500;font-size:16px;border:0;cursor:pointer;
+  transition:transform .2s ease,filter .2s ease,background .2s ease;white-space:nowrap}
+.btn-p{background:var(--primary);color:var(--on-primary)}
+.btn-p:hover{filter:brightness(1.08)}
+.btn-g{background:var(--surf);color:var(--text);position:relative;box-shadow:var(--hair),var(--inner),0 1px 1px rgba(0,0,0,.03),0 4px 12px -4px rgba(0,0,0,.06)}
+.btn-g::before{content:"";position:absolute;inset:0;border-radius:inherit;padding:1px;background:var(--rim);
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;
+  mask:linear-gradient(#000 0 0) content-box exclude,linear-gradient(#000 0 0);pointer-events:none}
+.btn-g:hover{transform:translateY(-1px)}
+.btn:active{transform:scale(.98)}
+.btn-sm{height:44px;padding:0 16px;font-size:15px}
+.btn:focus-visible,.row:focus-visible,a:focus-visible{outline:none;box-shadow:0 0 0 4px var(--ring)}
+
+/* ---------- Tarjetas ---------- */
+.card{padding:18px 20px}
+.head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding-bottom:12px;margin-bottom:6px;border-bottom:1px solid var(--sep)}
+.head h2{font-size:15px;font-weight:600;letter-spacing:-.01em}
+.head small{font-size:13px;color:var(--text2);text-align:right}
+
+.offer{display:flex;align-items:center;gap:16px;padding:18px 18px 18px 20px}
+.gift{width:48px;height:48px;border-radius:14px;display:grid;place-items:center;color:var(--accent);background:var(--accent-tint);flex:none}
+.offer-t{flex:1;min-width:0}
+.offer-t h3{font-size:16px;font-weight:600;letter-spacing:-.01em}
+.offer-t p{font-size:14px;color:var(--text2);margin-top:2px}
+
+.gal-main{width:100%;aspect-ratio:2/1;object-fit:cover;object-position:50% 40%;border-radius:16px;display:block;background:var(--fill)}
+.thumbs{display:flex;gap:8px;margin-top:10px;overflow-x:auto}
+.thumbs button{width:56px;height:56px;border-radius:10px;overflow:hidden;border:0;padding:0;cursor:pointer;opacity:.6;transition:opacity .2s;flex:none}
+.thumbs button[aria-current="true"],.thumbs button:hover{opacity:1}
+.thumbs img{width:100%;height:100%;object-fit:cover}
+
+.duo{display:grid;grid-template-columns:1.2fr 1fr;gap:16px;align-items:stretch}
+.duo.solo{display:block}
+.duo:not(.solo) .offer{flex-direction:column;align-items:flex-start;gap:12px;padding:20px}
+.duo:not(.solo) .offer .btn{width:100%;margin-top:auto}
+#galeria{position:relative}
+#galeria .gal-main{aspect-ratio:4/3;height:100%;border-radius:14px}
+#galeria .thumbs{position:absolute;left:20px;bottom:20px;margin:0}
+#galeria .thumbs button{width:44px;height:44px;border-radius:10px;opacity:.85;box-shadow:0 0 0 2px rgba(255,255,255,.9)}
+#galeria .thumbs button[aria-current="true"]{opacity:1;box-shadow:0 0 0 2px #fff,0 0 0 4px var(--primary)}
+/* Listas iOS */
+.list{list-style:none}
+.row{display:flex;align-items:center;gap:12px;min-height:44px;padding:0 10px;margin:0 -10px;border-radius:10px;transition:background .15s;cursor:pointer}
+.list li+li .row{box-shadow:inset 0 1px 0 var(--sep)}
+.row:hover{background:var(--hover)}
+.row .n{flex:1;font-size:15px;min-width:0}
+.row .p{font-size:15px;color:var(--text2);font-variant-numeric:tabular-nums;white-space:nowrap}
+.chev{color:var(--text2);opacity:.6;transition:transform .2s ease}
+.row:hover .chev{transform:translateX(2px)}
+
+/* Formulario */
+form{display:grid;gap:10px;margin-top:8px}
+.f-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.field{width:100%;height:44px;border:0;border-radius:12px;background:var(--fill);padding:0 14px;font-size:16px;outline:none;transition:box-shadow .2s;-webkit-appearance:none;appearance:none}
+select.field{padding-right:36px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none' stroke='%238e8e93' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M1 1.5l5 5 5-5'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center}
+.field::placeholder{color:var(--text2)}
+.field:focus{box-shadow:0 0 0 4px var(--ring)}
+.fallback{font-size:13px;color:var(--text2);text-align:center}
+.fallback a{text-decoration:underline;text-underline-offset:2px}
+
+/* Ubicación */
+.map{width:100%;height:150px;border:0;border-radius:16px;display:block;margin:8px 0 4px;background:var(--fill)}
+.loc{display:grid;grid-template-columns:1fr auto;gap:14px;align-items:start;margin-top:8px}
+.addr{font-size:15px}
+.ref{font-size:13px;color:var(--text2);margin-top:2px}
+.hours{list-style:none;margin-top:10px;font-size:14px}
+.hours li{display:flex;justify-content:space-between;align-items:center;gap:10px;min-height:30px}
+.hours li+li{border-top:1px solid var(--sep)}
+.hours .d{display:flex;align-items:center;gap:8px}
+.hours-lbl{font-size:13px;color:var(--text2);margin-top:12px}
+.hours-lbl + .hours{margin-top:4px}
+.notas{list-style:none;margin-top:8px;display:flex;flex-wrap:wrap;gap:6px}
+.notas li{font-size:13px;padding:4px 10px;border-radius:999px;background:var(--fill)}
+.hours .h{color:var(--text2);font-variant-numeric:tabular-nums;white-space:nowrap}
+.today{font-size:12px;font-weight:500;padding:1px 8px;border-radius:999px;box-shadow:inset 0 0 0 1px currentColor;color:var(--text)}
+
+/* Pie */
+footer.wrap{border-top:1px solid var(--sep);padding-top:16px;padding-bottom:22px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:13px;color:var(--text2-bg)}
+footer nav{display:flex;gap:16px;flex-wrap:wrap}
+footer a{min-height:24px;display:inline-flex;align-items:center;transition:color .2s}
+footer a:hover{color:var(--text)}
+
+/* Botón flotante celular */
+.fab{display:none;position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom));z-index:30;width:56px;height:56px;border-radius:50%;background:var(--primary);color:var(--on-primary);place-items:center;box-shadow:0 0 0 1px rgba(0,0,0,.07),0 8px 24px -8px rgba(0,0,0,.3)}
+
+/* Aparición */
+.rise{opacity:0;transform:translateY(8px);animation:rise .5s cubic-bezier(.2,.7,.2,1) forwards;animation-delay:calc(var(--i,0) * 50ms)}
+@keyframes rise{to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){
+  .rise{opacity:1;transform:none;animation:none}
+  *{transition:none!important}
+}
+
+/* Celular */
+@media (max-width:859px){
+  .wrap{padding:0 16px}
+  .topbar{top:10px;margin-top:10px}
+  .tel span{display:none}
+  .tel{padding:0 10px}
+  main.wrap{grid-template-columns:1fr;gap:16px;padding-top:18px;padding-bottom:96px}
+  .col{display:contents}
+  .duo{display:contents}
+  #galeria .gal-main{aspect-ratio:4/3;height:auto}
+  .status{order:1}.h1w{order:2}.sub{order:3}.ctas{order:4}#oferta{order:5}#galeria{order:6}#servicios{order:7}#agenda{order:8}#ubicacion{order:9}
+  .left{padding-top:0}
+  .ctas .btn{flex:1 1 160px}
+  .offer{flex-wrap:wrap}
+  .offer .btn{width:100%}
+  .f-row{grid-template-columns:1fr}
+  .loc{grid-template-columns:1fr}
+  .loc .btn{width:100%}
+  .fab{display:grid}
+  footer.wrap{padding-bottom:96px}
+}
+@media (max-width:480px){
+  .brand-name .rest{display:none}
+  .bar-r .btn{padding:0 14px}
+  .row{padding-top:6px;padding-bottom:6px}
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="topbar glass pill rise" style="--i:0">
+    <a class="brand" href="#" aria-label="Inicio">
+      <span class="logo" id="logo"></span>
+      <span class="brand-name" id="brandName"></span>
+    </a>
+    <div class="bar-r">
+      <a class="tel" id="barTel" href="#">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+        <span class="tab" id="barTelTxt"></span>
+      </a>
+      <a class="btn btn-p btn-sm" id="barWa" href="#" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+  </header>
+</div>
+
+<main class="wrap">
+  <!-- Columna izquierda -->
+  <section class="col left">
+    <div class="status glass pill rise" style="--i:1" id="status" role="status">
+      <span class="dot" id="dot"></span><span id="statusTxt">Consultando horario…</span>
+    </div>
+    <div class="h1w rise" style="--i:2"><p class="lema" id="lema"></p><h1 id="titular"></h1></div>
+    <p class="sub rise" style="--i:3" id="subtitulo"></p>
+    <div class="ctas rise" style="--i:4">
+      <a class="btn btn-p" id="ctaWa" href="#" target="_blank" rel="noopener">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.1 5.1 0 0 0 1.1 2.7 11.7 11.7 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.7-1.2 2.2 2.2 0 0 0 .2-1.2c-.1-.1-.3-.2-.5-.3z"/></svg>
+        Escríbenos por WhatsApp
+      </a>
+      <a class="btn btn-g" id="ctaCall" href="#">Llamar</a>
+    </div>
+
+    <div class="duo" id="duo">
+    <div class="glass card rise" style="--i:6;padding:10px" id="galeria">
+      <img class="gal-main" id="galMain" alt="">
+      <div class="thumbs" id="thumbs"></div>
+    </div>
+    <div class="glass offer rise" style="--i:5" id="oferta">
+      <div class="gift" aria-hidden="true">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7M7.5 8a2.5 2.5 0 0 1 0-5C10 3 12 8 12 8s2-5 4.5-5a2.5 2.5 0 0 1 0 5"/></svg>
+      </div>
+      <div class="offer-t"><h3 id="ofTit"></h3><p id="ofDet"></p></div>
+      <a class="btn btn-g btn-sm" id="ofBtn" href="#" target="_blank" rel="noopener"></a>
+    </div>
+
+    </div>
+  </section>
+
+  <!-- Columna derecha -->
+  <section class="col">
+    <div class="glass card rise" style="--i:3" id="servicios">
+      <div class="head"><h2>Servicios</h2><small>Toca para cotizar por WhatsApp</small></div>
+      <ul class="list" id="servList"></ul>
+    </div>
+
+    <div class="glass card rise" style="--i:4" id="agenda">
+      <div class="head"><h2>Agenda tu cita</h2><small>Te respondemos por WhatsApp</small></div>
+      <form id="form" novalidate>
+        <div class="f-row">
+          <input class="field" id="fNombre" type="text" placeholder="Tu nombre" autocomplete="name" aria-label="Tu nombre" required>
+          <select class="field" id="fServ" aria-label="Servicio"></select>
+        </div>
+        <button class="btn btn-p" type="submit">Enviar por WhatsApp</button>
+        <p class="fallback">¿No se abrió WhatsApp? <a id="fFallback" href="#" target="_blank" rel="noopener">Ábrelo aquí</a></p>
+      </form>
+    </div>
+
+    <div class="glass card rise" style="--i:5" id="ubicacion">
+      <div class="head"><h2>Ubicación y horario</h2><small id="tzNote">Hora de Colombia</small></div>
+      <iframe class="map" id="map" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa" hidden></iframe>
+      <div class="loc">
+        <div><p class="addr" id="addr"></p><p class="ref" id="ref"></p></div>
+        <a class="btn btn-g btn-sm" id="dirBtn" href="#" target="_blank" rel="noopener">Cómo llegar</a>
+      </div>
+      <p class="hours-lbl" id="hoursLbl" hidden></p>
+      <ul class="hours" id="hours"></ul>
+      <ul class="notas" id="notas"></ul>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap rise" style="--i:7">
+  <span id="copy"></span>
+  <nav id="redes" aria-label="Redes sociales"></nav>
+  <a href="https://gotiastudio.it.com" target="_blank" rel="noopener">Página creada por Gotia Studio</a>
+</footer>
+
+<a class="fab" id="fab" href="#" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.1 5.1 0 0 0 1.1 2.7 11.7 11.7 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.7-1.2 2.2 2.2 0 0 0 .2-1.2c-.1-.1-.3-.2-.5-.3z"/></svg>
+</a>
+
+<script>
+(function(){
+  const N = NEGOCIO, C = N.contacto || {}, K = N.contenido || {}, E = N.estilo || {};
+  const $ = id => document.getElementById(id);
+  const esc = s => String(s == null ? "" : s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+  const vacio = v => v == null || (typeof v === "string" && !v.trim()) || (Array.isArray(v) && !v.length);
+  const ocultar = (id, cond) => { if (cond) $(id).hidden = true; };
+
+  /* ---------- Estilo desde NEGOCIO ---------- */
+  const root = document.documentElement;
+  root.dataset.modo = E.modo === "oscuro" ? "oscuro" : "claro";
+  const bg = E.fondo || (E.modo === "oscuro" ? "#0b0b0d" : "#eff0f3");
+  const hex2rgb = h => { h = h.replace("#",""); if (h.length === 3) h = h.split("").map(x=>x+x).join(""); const n = parseInt(h,16); return [n>>16&255, n>>8&255, n&255]; };
+  const lum = h => { const [r,g,b] = hex2rgb(h).map(v => { v/=255; return v <= .03928 ? v/12.92 : Math.pow((v+.055)/1.055, 2.4); }); return .2126*r + .7152*g + .0722*b; };
+  const ratio = (a,b) => { const x = lum(a), y = lum(b); return (Math.max(x,y)+.05)/(Math.min(x,y)+.05); };
+  const P = E.principal || "#0b57d0", A = E.acento || "#f59e0b";
+  const [pr,pg,pb] = hex2rgb(P), [ar,ag,ab] = hex2rgb(A);
+  root.style.setProperty("--bg", bg);
+  root.style.setProperty("--primary", P);
+  root.style.setProperty("--on-primary", ratio(P,"#ffffff") >= ratio(P,"#000000") ? "#ffffff" : "#000000");
+  root.style.setProperty("--ring", `rgba(${pr},${pg},${pb},.4)`);
+  root.style.setProperty("--accent", A);
+  root.style.setProperty("--accent-tint", `rgba(${ar},${ag},${ab},.14)`);
+  if (E.fuente) root.style.setProperty("--font", E.fuente);
+  if (E.fuenteMarca) root.style.setProperty("--font-marca", E.fuenteMarca);
+  if (E.fuenteTitular) { root.style.setProperty("--font-titular", E.fuenteTitular); document.querySelector("h1").classList.add("serif"); }
+
+  /* ---------- SEO ---------- */
+  const desc = K.subtitulo || "";
+  const setMeta = (sel, attr, val) => { let m = document.head.querySelector(sel); if (!m) { m = document.createElement("meta"); const [k,v] = sel.match(/\[(.+?)="(.+?)"\]/).slice(1); m.setAttribute(k,v); document.head.appendChild(m); } m.setAttribute(attr, val); };
+  const titulo = N.nombre + (K.titular ? " · " + K.titular : "");
+  document.title = titulo;
+  setMeta('meta[name="description"]', "content", desc);
+  setMeta('meta[name="theme-color"]', "content", bg);
+  setMeta('meta[property="og:title"]', "content", titulo);
+  setMeta('meta[property="og:description"]', "content", desc);
+
+  /* ---------- Analítica ---------- */
+  const track = (ev, data) => {
+    try { if (typeof window.gtag === "function") window.gtag("event", ev, data || {}); } catch(e){}
+    try { if (typeof window.fbq === "function") window.fbq("trackCustom", ev, data || {}); } catch(e){}
+  };
+
+  /* ---------- WhatsApp ---------- */
+  // Con número: abre el chat con el mensaje prellenado. Sin número: usa el enlace de WhatsApp Business del negocio.
+  const wa = msg => vacio(C.whatsapp) ? C.whatsappEnlace : "https://wa.me/" + String(C.whatsapp).replace(/\D/g,"") + "?text=" + encodeURIComponent(msg || "");
+  const bindWa = (el, msg, label) => { el.href = wa(msg); el.addEventListener("click", () => track("whatsapp_click", { ubicacion: label })); };
+  const hayWa = !vacio(C.whatsapp) || /^https:\/\/(wa\.me|api\.whatsapp\.com)\//.test(C.whatsappEnlace || "");
+
+  /* ---------- Barra ---------- */
+  /* Nombre de marca: primera palabra letra por letra con los colores de su identidad */
+  const nom = (N.nombre || "").trim(), partes = nom.split(" "), cols = E.marcaColores || [];
+  $("brandName").setAttribute("aria-label", nom);
+  $("brandName").innerHTML = (cols.length
+    ? [...partes[0]].map((ch,i) => `<span aria-hidden="true" style="color:${esc(cols[i % cols.length])}">${esc(ch)}</span>`).join("")
+    : `<span aria-hidden="true">${esc(partes[0])}</span>`)
+    + (partes.length > 1 ? `<span class="rest" aria-hidden="true">${esc(partes.slice(1).join(" "))}</span>` : "");
+  if (K.logo) $("logo").innerHTML = `<img src="${esc(K.logo)}" alt="">`;
+  if (K.logo && K.logoAncho) { $("logo").classList.add("wide"); $("logo").querySelector("img").alt = N.nombre; $("brandName").hidden = true; }
+  else $("logo").textContent = (N.nombre || "?").trim().charAt(0).toUpperCase();
+  const telHref = "tel:" + (String(C.telefono).replace(/\D/g,"").length > 10 ? "+" : "") + String(C.telefono || "").replace(/\D/g,"");
+  if (C.telefono) { $("barTelTxt").textContent = C.telefono; $("barTel").href = telHref; $("ctaCall").href = telHref; }
+  ocultar("barTel", vacio(C.telefono)); ocultar("ctaCall", vacio(C.telefono));
+  if (hayWa) { bindWa($("barWa"), C.mensaje, "barra"); bindWa($("ctaWa"), C.mensaje, "principal"); bindWa($("fab"), C.mensaje, "flotante"); }
+  ocultar("barWa", !hayWa); ocultar("ctaWa", !hayWa); ocultar("fab", !hayWa);
+
+  /* ---------- Hero ---------- */
+  $("lema").textContent = K.lema || ""; ocultar("lema", vacio(K.lema));
+  $("titular").textContent = K.titular || "";
+  $("subtitulo").textContent = K.subtitulo || "";
+  ocultar("subtitulo", vacio(K.subtitulo));
+
+  /* ---------- Oferta ---------- */
+  const O = K.oferta || {};
+  if (!vacio(O.titulo)) {
+    $("ofTit").textContent = O.titulo; $("ofDet").textContent = O.detalle || "";
+    $("ofBtn").textContent = O.boton || "La quiero";
+    if (hayWa) bindWa($("ofBtn"), "Hola, quiero la oferta: " + O.titulo, "oferta"); else $("ofBtn").hidden = true;
+  } else { $("oferta").hidden = true; $("duo").classList.add("solo"); }
+
+  /* ---------- Galería ---------- */
+  const fotos = [K.foto, ...(K.fotos || [])].filter(f => !vacio(f));
+  if (fotos.length) {
+    $("galMain").src = fotos[0]; $("galMain").alt = N.nombre;
+    if (fotos.length > 1) {
+      $("thumbs").innerHTML = fotos.map((f,i) => `<button type="button" aria-label="Ver foto ${i+1}" aria-current="${i===0}"><img src="${esc(f)}" alt="" loading="lazy"></button>`).join("");
+      $("thumbs").querySelectorAll("button").forEach((b,i) => b.addEventListener("click", () => {
+        $("galMain").src = fotos[i];
+        $("thumbs").querySelectorAll("button").forEach(x => x.setAttribute("aria-current", x === b));
+      }));
+    }
+  } else { $("galeria").hidden = true; $("duo").classList.add("solo"); }
+
+  /* ---------- Servicios ---------- */
+  const servs = (K.servicios || []).filter(s => s && !vacio(s.nombre)).slice(0,6);
+  const chev = `<svg class="chev" width="8" height="13" viewBox="0 0 8 13" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1.5 1.5l5 5-5 5"/></svg>`;
+  if (servs.length) {
+    $("servList").innerHTML = servs.map(s => `<li><a class="row" ${hayWa ? `href="${esc(wa("Hola, quiero información sobre: " + s.nombre))}" target="_blank" rel="noopener"` : ""} data-s="${esc(s.nombre)}"><span class="n">${esc(s.nombre)}</span>${s.precio ? `<span class="p">${esc(s.precio)}</span>` : ""}${hayWa ? chev : ""}</a></li>`).join("");
+    $("servList").querySelectorAll(".row").forEach(r => r.addEventListener("click", () => track("whatsapp_click", { ubicacion: "servicio", servicio: r.dataset.s })));
+  } else $("servicios").hidden = true;
+
+  /* ---------- Formulario ---------- */
+  if (hayWa) {
+    $("fServ").innerHTML = [...servs.map(s => s.nombre), "Otra consulta"].map(n => `<option>${esc(n)}</option>`).join("");
+    const armar = () => {
+      const nom = $("fNombre").value.trim();
+      return (nom ? "Hola, soy " + nom + ". " : "Hola. ") + "Me interesa: " + $("fServ").value + ".";
+    };
+    const upd = () => { $("fFallback").href = wa(armar()); };
+    $("fNombre").addEventListener("input", upd); $("fServ").addEventListener("change", upd); upd();
+    $("form").addEventListener("submit", e => {
+      e.preventDefault();
+      if (!$("fNombre").value.trim()) { $("fNombre").focus(); return; }
+      const url = wa(armar()); $("fFallback").href = url;
+      track("form_whatsapp", { servicio: $("fServ").value });
+      window.open(url, "_blank", "noopener");
+    });
+    $("fFallback").addEventListener("click", () => track("form_whatsapp", { servicio: $("fServ").value, respaldo: true }));
+  } else $("agenda").hidden = true;
+
+  /* ---------- Ubicación ---------- */
+  const src = (C.mapaEmbed || "").match(/src=["']([^"']+)["']/);
+  if (src && /^https:\/\/(www\.)?google\.[a-z.]+\/maps\//.test(src[1])) { $("map").src = src[1]; $("map").hidden = false; }
+  $("addr").textContent = C.direccion || ""; ocultar("addr", vacio(C.direccion));
+  $("ref").textContent = C.referencia || ""; ocultar("ref", vacio(C.referencia));
+  if (!vacio(C.direccion)) {
+    $("dirBtn").href = "https://www.google.com/maps/dir/?api=1&destination=" + encodeURIComponent(N.nombre + ", " + C.direccion);
+    $("dirBtn").addEventListener("click", () => track("maps_click", {}));
+  } else $("dirBtn").hidden = true;
+
+  /* ---------- Horario y estado ---------- */
+  const DIAS = ["lunes","martes","miercoles","jueves","viernes","sabado","domingo"];
+  const NOMBRES = ["Lunes","Martes","Miércoles","Jueves","Viernes","Sábado","Domingo"];
+  const H = C.horario || {};
+  const rango = k => { const v = (H[k] || "").trim(); const m = v.match(/^(\d{1,2}):(\d{2})\s*-\s*(\d{1,2}):(\d{2})$/); return m ? [ +m[1]*60 + +m[2], +m[3]*60 + +m[4] ] : null; };
+  const fmt = min => { const h = Math.floor(min/60) % 24, m = min % 60; return (h % 12 || 12) + ":" + String(m).padStart(2,"0") + (h < 12 ? " a. m." : " p. m."); };
+  const tz = C.zonaHoraria || "America/Bogota";
+  const ahora = () => {
+    const p = {}; new Intl.DateTimeFormat("en-US", { timeZone: tz, weekday: "short", hour: "2-digit", minute: "2-digit", hour12: false }).formatToParts(new Date()).forEach(x => p[x.type] = x.value);
+    const wd = ["Mon","Tue","Wed","Thu","Fri","Sat","Sun"].indexOf(p.weekday);
+    return { d: wd, min: (+p.hour % 24) * 60 + +p.minute };
+  };
+  const hayHorario = DIAS.some(k => rango(k));
+  const pintarEstado = () => {
+    if (!hayHorario) { $("status").hidden = true; return; }
+    const { d, min } = ahora(), r = rango(DIAS[d]);
+    if (r && min >= r[0] && min < r[1]) { $("dot").className = "dot on"; $("statusTxt").textContent = (C.estadoAbierto || "Abierto ahora, cierra a las") + " " + fmt(r[1]); return; }
+    $("dot").className = "dot";
+    for (let i = 0; i < 8; i++) {
+      const k = (d + i) % 7, rr = rango(DIAS[k]);
+      if (!rr || (i === 0 && min >= rr[0])) continue;
+      const cuando = i === 0 ? "hoy" : i === 1 ? "mañana" : "el " + NOMBRES[k].toLowerCase();
+      $("statusTxt").textContent = (C.estadoCerrado || "Cerrado, abre") + " " + cuando + " a las " + fmt(rr[0]); return;
+    }
+    $("statusTxt").textContent = "Cerrado";
+  };
+  pintarEstado(); setInterval(pintarEstado, 60000);
+
+  if (hayHorario) {
+    const hoy = ahora().d, grupos = [];
+    DIAS.forEach((k,i) => { const v = (H[k] || "").trim(); const g = grupos[grupos.length-1]; if (g && g.v === v) g.fin = i; else grupos.push({ v, ini: i, fin: i }); });
+    $("hours").innerHTML = grupos.map(g => {
+      const n = g.fin - g.ini;
+      const lbl = n === 0 ? NOMBRES[g.ini] : NOMBRES[g.ini] + (n === 1 ? " y " : " a ") + NOMBRES[g.fin].toLowerCase();
+      const r = rango(DIAS[g.ini]);
+      const esHoy = hoy >= g.ini && hoy <= g.fin;
+      return `<li><span class="d">${esc(lbl)}${esHoy ? '<span class="today">Hoy</span>' : ""}</span><span class="h">${r ? fmt(r[0]) + " – " + fmt(r[1]) : "Cerrado"}</span></li>`;
+    }).join("");
+    if (C.etiquetaHorario) { $("hoursLbl").textContent = C.etiquetaHorario; $("hoursLbl").hidden = false; }
+  } else $("hours").hidden = true;
+  const notas = (C.notasHorario || []).filter(n => !vacio(n));
+  $("notas").innerHTML = notas.map(n => `<li>${esc(n)}</li>`).join(""); ocultar("notas", !notas.length);
+  if (vacio(C.direccion) && !hayHorario && !src) $("ubicacion").hidden = true;
+
+  /* ---------- Pie ---------- */
+  $("copy").textContent = "© " + new Date().getFullYear() + " " + (N.nombre || "");
+  const redes = (C.redes || []).filter(r => r && r.url && /^https?:\/\//.test(r.url));
+  $("redes").innerHTML = redes.map(r => `<a href="${esc(r.url)}" target="_blank" rel="noopener">${esc(r.nombre)}</a>`).join("");
+  ocultar("redes", !redes.length);
+
+  /* ---------- JSON-LD ---------- */
+  const SCHEMA_DIAS = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"];
+  const ld = {
+    "@context": "https://schema.org", "@type": N.schemaTipo || "LocalBusiness",
+    name: N.nombre, description: desc, url: location.href.split("#")[0],
+    telephone: C.whatsapp ? "+" + String(C.whatsapp).replace(/\D/g,"") : (C.telefono || undefined),
+    image: K.foto ? new URL(K.foto, location.href).href : undefined,
+    address: C.direccion ? { "@type": "PostalAddress", streetAddress: C.direccion, addressLocality: C.localidad, addressRegion: C.region, addressCountry: "CO" } : undefined,
+    sameAs: redes.map(r => r.url),
+    openingHoursSpecification: DIAS.map((k,i) => { const r = rango(k); return r && { "@type": "OpeningHoursSpecification", dayOfWeek: SCHEMA_DIAS[i], opens: H[k].split("-")[0].trim(), closes: H[k].split("-")[1].trim() }; }).filter(Boolean),
+    makesOffer: servs.map(s => ({ "@type": "Offer", name: s.nombre }))
+  };
+  const sc = document.createElement("script"); sc.type = "application/ld+json"; sc.textContent = JSON.stringify(ld); document.head.appendChild(sc);
+})();
+</script>
+</body>
+</html>
